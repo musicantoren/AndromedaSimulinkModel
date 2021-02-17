@@ -1,0 +1,52 @@
+clc;
+load('Cognata.mat', 'data')
+Z=data';
+headers1=[
+    "measurement time"
+    "simulation time"
+    "Pupil center RIGHT eye_X"
+    "Pupil center RIGHT eye_Y"
+    "Pupil center RIGHT eye_Z"
+    "Pupil center LEFT eye_X"
+    "Pupil center LEFT eye_Y"
+    "Pupil center LEFT eye_Z"
+    "Pupil diameter RIGHT"
+    "Pupil diameter LEFT"
+    "Gaze direction RIGHT eye_X"
+    "Gaze direction RIGHT eye_Y"
+    "Gaze direction RIGHT eye_Z"
+    "Gaze direction LEFT eye_X"
+    "Gaze direction LEFT eye_Y"
+    "Gaze direction LEFT eye_Z"
+    "Gaze position_X"
+    "Gaze position_Y"
+    "Gaze position 3D_X"
+    "Gaze position 3D_Y"
+    "Gaze position 3D_Z"
+    "Gyroscope_X"
+    "Gyroscope_Y"
+    "Gyroscope_Z"
+    "Accelerometer_X"
+    "Accelerometer_Y"
+    "Accelerometer_Z"
+    "EEG_1"
+    "EEG_2"
+    "EEG_3"
+    "EEG_4"
+    "EEG_5"
+    "EEG_6"
+    "EEG_7"
+    "EEG_8"
+    "EEG_9"
+    "EEG_10"
+    "EEG_11"
+    "EEG_12"
+    "EEG_13"
+    "EEG_14"
+    "EEG_15"
+    "EEG_16"
+    ];
+ X=[headers1';Z];
+ prompt = 'Name?';
+ filename = sprintf('Data of %s at %s.xls',input(prompt,'s'),datestr(now,'dd-mm(HH.MM.SS)'));
+xlswrite(filename,X)
